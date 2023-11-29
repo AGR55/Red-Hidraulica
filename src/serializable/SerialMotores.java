@@ -26,6 +26,7 @@ public class SerialMotores {
         ArrayList<Motores> mot;
         try {
             ObjectInputStream cargar=new ObjectInputStream(new FileInputStream("Motores.dat"));
+            //noinspection unchecked
             mot=(ArrayList<Motores>)cargar.readObject();
             cargar.close();
             return mot;

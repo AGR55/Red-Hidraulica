@@ -2,7 +2,7 @@ package app;
 
 import java.io.Serializable;
 
-public abstract class Motores implements Serializable {
+public class Motores implements Serializable {
     protected final String id;
     protected final String estado;
     protected final double regimen;

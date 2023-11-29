@@ -2,7 +2,7 @@ package app;
 
 import java.io.Serializable;
 
-public abstract class Depositos implements Serializable{
+public class Depositos implements Serializable{
     protected final String id;
     protected final int capacidad;
     protected final String estado;

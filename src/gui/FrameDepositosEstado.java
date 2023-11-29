@@ -1,9 +1,9 @@
 package gui;
 
 import app.RedHidraulica;
-
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Objects;
 import javax.swing.*;
 
 /**
@@ -31,15 +31,16 @@ public class FrameDepositosEstado extends javax.swing.JFrame {
         abasto = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         try {
-            ImageIcon image=new ImageIcon(getClass().getResource("/resources/blood.png"));
+            ImageIcon image=new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/blood.png")));
             setIconImage(image.getImage());
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, "No se encuentra el icono");
         }
         setTitle("Informacion de depositos");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));
         jLabel1.setText("Informacion sobre depositos en regular o mal estado");
 
         jLabel2.setText("Tipo de abasto");
@@ -52,7 +53,6 @@ public class FrameDepositosEstado extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         abasto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gravedad", "Bombeo", "Camion cisterna", "Tuberias" }));
-        abasto.addActionListener(evt -> abastoActionPerformed());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,13 +99,10 @@ public class FrameDepositosEstado extends javax.swing.JFrame {
         modelo.clear();
         ArrayList<String> infoDepositos=red.infoDepositos(tipoAbasto);
         for (String infoDeposito : infoDepositos) {
+            //noinspection unchecked
             modelo.addElement(infoDeposito);
             jList1.revalidate();
         }
-    }
-
-    private void abastoActionPerformed() {
-
     }
 
     private javax.swing.JComboBox<String> abasto;

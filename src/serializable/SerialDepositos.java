@@ -26,6 +26,7 @@ public class SerialDepositos {
         ArrayList<Depositos> dep;
         try {
             ObjectInputStream cargar=new ObjectInputStream(new FileInputStream("Depositos.dat"));
+            //noinspection unchecked
             dep=(ArrayList<Depositos>)cargar.readObject();
             cargar.close();
             return dep;
