@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FINAL3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FINAL3_jar</output-path>
+    <root id="archive" name="FINAL3.jar">
+      <element id="module-output" name="FINAL3" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/flatlaf-demo-3.2.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
